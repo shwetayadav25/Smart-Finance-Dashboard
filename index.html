@@ -1,0 +1,191 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Finova | Smart Finance Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2>💎 Finova</h2>
+
+            <nav>
+                <a href="#">Dashboard</a>
+                <a href="#transactions">Transactions</a>
+                <a href="#analytics">Analytics</a>
+                <a href="#budget">Budget</a>
+                <a href="#">Settings</a>
+            </nav>
+
+            <div class="profile">
+                <h3>Shweta</h3>
+                <p>Personal Account</p>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header>
+                <div>
+                    <h1>Financial Dashboard</h1>
+                    <p>Welcome back, Shweta! 👋</p>
+                </div>
+            </header>
+
+
+            <!-- Summary Cards -->
+            <section class="summary-cards">
+
+                <div class="card">
+                    <h3>Total Balance</h3>
+                    <h2 id="total-balance">₹0</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Total Income</h3>
+                    <h2 id="total-income">₹0</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Total Expenses</h3>
+                    <h2 id="total-expense">₹0</h2>
+                </div>
+
+            </section>
+
+
+            <!-- Analytics -->
+            <section id="analytics" class="chart-section">
+
+                <h2>Financial Analytics</h2>
+
+                <canvas id="financeChart"></canvas>
+
+            </section>
+
+
+            <!-- Budget -->
+            <section id="budget" class="budget-section">
+
+                <h2>Monthly Budget</h2>
+
+                <p>Manage your monthly spending wisely.</p>
+
+            </section>
+
+
+            <!-- Transactions -->
+            <section id="transactions" class="transactions-section">
+
+                <h2>Recent Transactions</h2>
+
+
+                <!-- Search, Filter and Sorting -->
+                <div class="transaction-controls">
+
+                    <div class="search-box">
+
+                        <input
+                            type="text"
+                            id="search-transaction"
+                            placeholder="Search transactions..."
+                        >
+
+                    </div>
+
+
+                    <div class="filter-box">
+
+                        <label for="transaction-filter">Filter:</label>
+
+                        <select id="transaction-filter">
+
+                            <option value="all">All Transactions</option>
+                            <option value="income">Income Only</option>
+                            <option value="expense">Expense Only</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="sort-box">
+
+                        <label for="sort-transaction">Sort By:</label>
+
+                        <select id="sort-transaction">
+
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="high">Amount: High to Low</option>
+                            <option value="low">Amount: Low to High</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Add Transaction Form -->
+                <div class="add-transaction-form">
+
+                    <input
+                        type="text"
+                        id="transaction-name"
+                        placeholder="Transaction Name"
+                    >
+
+                    <input
+                        type="number"
+                        id="transaction-amount"
+                        placeholder="Amount"
+                        min="1"
+                    >
+
+                    <select id="transaction-type">
+
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+
+                    </select>
+
+                    <button id="add-transaction">
+                        + Add Transaction
+                    </button>
+
+                </div>
+
+
+                <!-- Transaction List -->
+                <div id="transaction-list"></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
